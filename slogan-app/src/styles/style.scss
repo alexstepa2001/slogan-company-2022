@@ -1,13 +1,148 @@
-.GitTest{
+@import 'templates.scss';
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    src: url('../../public/fonts/Inter.ttf');
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }
+
+*{
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+.App{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 96px 1fr;
+}
+.navigation_wrapper{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 96px;
+    background: linear-gradient(180deg, #D5EEE2 0%, #7DB59A 43.23%);
     display: flex;
-    flex-direction: column-reverse;
-    a{
-        color: #234134;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    .navigation{
+        display: flex;
+        flex-direction: column;
+        height: 43%;
+        justify-content: space-between;
+        .navigation_icon{
+            width: 96px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+        }
+        .icon_active{
+            border-left: 5px solid #fff;
+        }
+    }
+}
+.logo{
+    margin-bottom: 48px;
+    img{
+        width: 72px;
+    }
+}
+.header{
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid #C2C2C2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 24px;
+    .search_form{
+        width: 30%;
+        margin-right: 74px;
+        .search{
+            width: 100%;
+            height: 48px;
+            background-color: rgba(194, 194, 194, 0.24);;
+            border-radius: 16px;
+            border: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            padding-left: 28px;
+            background-image: url(../../public/img/icon-search.svg);
+            background-repeat: no-repeat;
+            background-position: top 4px right 4px;
+            background-size: 40px;
+            &:focus{
+                outline: none;
+            }
+            &::placeholder{
+                color: #ADADAD;
+            }
+        }
+    }
+    .notifications{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 20px;
+        a{
+            height: 40px;
+        }
+        img{
+            height: 40px;
+        }
+        .notifications_on{
+            height: 9px;
+            width: 9px;
+            background-color: $declined;
+            border-radius: 50%;
+            position: absolute;
+            right: 8px;
+            top: 34px;
+        }
+    }
+    .account{
         text-decoration: none;
-        transition: all 0.1s ease;
-        font-size: 100px;
-        &:hover{
-            color: #987231;
+        color: #000;
+        display: flex;
+        align-items: center;
+        .user_photo{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            img{
+                height: inherit;
+            }
+        }
+        h5{
+            font-weight: 400;
+            font-size: 14px;
+            margin-right: 23px;
+        }
+        .log_out{
+            width: 40px;
+            height: 40px;
+            img{
+                height: inherit;
+                width: inherit;
+            }
         }
     }
 }

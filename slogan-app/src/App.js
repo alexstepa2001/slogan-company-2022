@@ -1,10 +1,15 @@
-import TestC from './components/TestC';
+import Navigation from './components/Navigation'
+import Header from './components/Header';
+import ClaimsSection from './components/ClaimsSection';
 import './styles/style.scss';
+import './styles/claims.scss';
 
 function App() {
   return (
     <div className="App">
-      <TestC/>
+      <Navigation/>
+      <Header/>
+      <ClaimsSection/>
     </div>
   );
 }
