@@ -1,0 +1,13 @@
+.main_nav{
+    display: flex;
+    flex-direction: column;
+    font-size: 100px;
+    a{
+        text-decoration: none;
+        color: #249587;
+        transition: all 0.1s ease;
+            &:hover{
+                color: #912384;
+            }
+    }
+}
