@@ -1,0 +1,103 @@
+@import 'templates.scss';
+@font-face {
+    font-family: "Inter-Bold";
+    font-style: normal;
+    src: url('../../public/fonts/Inter-Bold.ttf');
+}
+
+.create_new_claim_section{
+    padding: 56px 56px 56px 152px;
+    h1{
+        font-family: "Inter-Bold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        margin: 0;
+        margin-bottom: 48px;
+    }
+    form{
+        width: 35%;
+        p{
+            font-family: "Inter-Bold";
+            font-style: normal;
+            font-weight: 800;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #ADADAD;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 8px;
+        }
+        input,select{
+            width: 100%;
+            margin-bottom: 40px;
+            height: 48px;
+            border: none;
+            background-color: rgba(194, 194, 194, 0.24);
+            border-radius: 16px;
+            padding: 0 16px;
+            font-size: 18px;
+            &:focus{
+                outline: none;
+            }
+            &::placeholder{
+                color: $slogan_black;
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+        select{
+            background-image: url(../../public/img/Vector.svg);
+            background-repeat: no-repeat;
+            background-position: top 21px right 21px;
+            background-size: 12px;
+        }
+        .form_buttons{
+            display: flex;
+            .new_cancel_but{
+                font-family: "Inter-Bold";
+                height: 48px;
+                width: 82px;
+                border: 1px solid #ADADAD;
+                border-radius: 16px;
+                background-color: #fff;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 36px;
+                color: #858585;
+                cursor: pointer;
+                margin-right: 24px;
+                transition: all 0.1s ease;
+                &:hover{
+                    border: 1px solid #7DB59A;
+                    color: #7DB59A;
+                }
+                &:active{
+                    border: 1px solid #4F896C;
+                    color: #4F896C;
+                }
+            }
+            .create_but{
+                background-color: #7DB59A;
+                color: #fff;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 36px;
+                font-family: "Inter-Bold";
+                width: 82px;
+                padding: 0;
+                cursor: pointer;
+                transition: all 0.1s ease;
+                &:hover{
+                    background-color: #5B9479;
+                }
+                &:active{
+                    background-color: #4F896C;
+                }
+            }
+        }
+    }
+}
