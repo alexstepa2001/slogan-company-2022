@@ -16,7 +16,7 @@
         margin: 0;
         margin-bottom: 48px;
     }
-    form{
+    form:not([class]){
         width: 35%;
         p{
             font-family: "Inter-Bold";
@@ -97,6 +97,77 @@
                 &:active{
                     background-color: #4F896C;
                 }
+            }
+        }
+    }
+}
+
+.form_buttons_incoming{
+    display: flex;
+    .new_cancel_but{
+        margin-right: 24px;
+        font-family: "Inter-Bold";
+        height: 48px;
+        width: 82px;
+        border: 1px solid #ADADAD;
+        border-radius: 16px;
+        background-color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 36px;
+        color: #858585;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        &:hover{
+            border: 1px solid #7DB59A;
+            color: #7DB59A;
+        }
+        &:active{
+            border: 1px solid #4F896C;
+            color: #4F896C;
+        }
+    }
+    .incoming_form{
+        display: flex;
+        input{
+            border: none;
+            background-color: #E84393;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 36px;
+            font-family: "Inter-Bold";
+            width: 82px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            border-radius: 16px;
+            &:hover{
+                background-color: #B03671;
+            }
+            &:active{
+                background-color: #832552;
+            }
+            &:first-child{
+                margin-right: 24px;
+                background-color: #7DB59A;
+                &:hover{
+                    background-color: #5B9479;
+                }
+                &:active{
+                    background-color: #4F896C;
+                }
+            }
+        }
+    }
+}
+
+.incoming{
+    form:not([class]){
+        input,select{
+            cursor: pointer;
+            &::placeholder{
+                color: #ADADAD;
             }
         }
     }
