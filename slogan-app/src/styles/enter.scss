@@ -126,4 +126,13 @@ $footer_height: 96px;
     img{
         height: 60px;
     }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.header{
+    display: none;
+}
+.navigation_wrapper{
+    display: none; 
 }

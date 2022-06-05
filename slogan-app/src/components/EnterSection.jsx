@@ -23,7 +23,7 @@ export default class EnterSection extends Component {
                         </div>
                         <input type="submit" value="Login" />
                     </form>
-                    <p>Not a member? <Link to="">Request registration</Link></p>
+                    <p>Not a member? <Link to="/">Request registration</Link></p>
                 </div>
             </section>
         )
