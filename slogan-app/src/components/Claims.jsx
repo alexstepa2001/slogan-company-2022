@@ -31,7 +31,6 @@ function App() {
           <Route path = '/' element = {<ClaimsSection/>}/>
           <Route path = '/new_claim' element = {<NewClaimSection/>}/>
           <Route path = '/incoming_claim' element = {<IncomingClaimSection/>}/>
-          <Route path = '/enter' element = {<Enter/>}/>
         </Routes>
       </div>
     </>
