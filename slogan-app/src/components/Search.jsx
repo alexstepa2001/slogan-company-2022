@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
-
-export default class Search extends Component {
-    render() {
+const Search = () => {
     return (
         <form action="" className = "search_form">
             <input className = "search" type="search" name="search" id="search" placeholder='Search'/>
         </form>
         )
-    }
 }
+export default Search;

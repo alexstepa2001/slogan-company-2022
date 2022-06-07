@@ -1,3 +1,4 @@
+import {ENTER, INDEX, NEW, INCOMING} from '../constants/routes.js';
 import Navigation from './Navigation'
 import Header from './Header';
 import Enter from './Enter';
@@ -8,34 +9,31 @@ import '../styles/style.scss';
 import '../styles/claims.scss';
 import {Routes, Route, useLocation} from 'react-router-dom';
 
-function App() {
-  let location = useLocation();
-  if (location.pathname == '/enter'){
+const App = () => {
+  const location = useLocation();
+  const isEnterLocation = location.pathname === '/enter';
+  console.log(isEnterLocation);
+  if (isEnterLocation) {
     return (
-      <>
       <div className="App">
         <Routes>
-          <Route path = '/enter' element = {<Enter/>}/>
+          <Route path = {ENTER} element={<Enter/>} />
         </Routes>
       </div>
-    </>
     );
   }
   else{
     return (
-      <>
-      <div className="App">
-        <Navigation/>
-        <Header/>
-        <Routes>
-          <Route path = '/' element = {<ClaimsSection/>}/>
-          <Route path = '/new_claim' element = {<NewClaimSection/>}/>
-          <Route path = '/incoming_claim' element = {<IncomingClaimSection/>}/>
-        </Routes>
-      </div>
-    </>
+    <div className="App">
+      <Navigation />
+      <Header />
+      <Routes>
+        <Route path={INDEX} element={<ClaimsSection />} />
+        <Route path={NEW} element={<NewClaimSection />} />
+        <Route path={INCOMING} element={<IncomingClaimSection />} />
+      </Routes>
+    </div>
     );
   }
 }
-
 export default App;
