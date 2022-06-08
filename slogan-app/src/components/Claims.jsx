@@ -12,7 +12,6 @@ import {Routes, Route, useLocation} from 'react-router-dom';
 const App = () => {
   const location = useLocation();
   const isEnterLocation = location.pathname === '/enter';
-  console.log(isEnterLocation);
   if (isEnterLocation) {
     return (
       <div className="App">

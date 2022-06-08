@@ -26,6 +26,10 @@ $footer_height: 96px;
         justify-content: center;
         .login_logo{
             margin-bottom: 96px;
+            width: 17%;
+            img{
+                width: 100%;
+            }
         }
         a{
             text-decoration: none;
@@ -136,3 +140,68 @@ $footer_height: 96px;
 .navigation_wrapper{
     display: none; 
 }
+
+
+@media screen and (max-width: $laptop){
+    .enter_section{
+        height: calc(100vh - 64px);
+        .login{
+            .login_logo{
+                margin-bottom: 72px;
+            }
+            form{
+                input:not([class]){
+                    font-size: 16px;
+                    margin-bottom: 24px;
+                    &:last-child{
+                        margin-top: 24px;
+                        font-size: 16px;
+                    }
+                }
+                #password{
+                    margin-bottom: 19px;
+                }
+                .check_box{
+                    font-size: 12px;
+                }
+            }
+            
+        }
+    }
+    .enter_footer{
+        height: 64px;
+        img{
+            height: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 970px){
+    .enter_section{
+        .login{
+            form{
+                width: 60%;
+                #email, #password{
+                    background-size: 25px;
+                    background-position: top 12px right 12px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $tablet){
+    .enter_section {
+        grid-template-columns: unset;
+        .img_enter{
+            display: none;
+        }
+        .login{
+            .login_logo{
+                width: 26%;
+            }
+            form{
+                width: 90%;
+            }
+        }
+    }
+}   
