@@ -194,8 +194,6 @@ select::-ms-expand {
     .navigation_wrapper{
         position: fixed;
         top: 0;
-        opacity: 0;
-        visibility: hidden;
         left: -256px;
         width: 256px;
         padding-top: 80px;
@@ -261,5 +259,8 @@ select::-ms-expand {
                 }
             }
         }
+    }
+    .isActivate{
+        left: 0;
     }
 }

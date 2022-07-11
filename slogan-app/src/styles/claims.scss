@@ -64,6 +64,7 @@
             height: 56px;
             color: #2D3436;
             th{
+                height: inherit;
                 font-family: Inter;
                 font-weight: 500;
                 font-size: 18px;
@@ -81,6 +82,7 @@
             }
             td{
                 border-top: 1px solid #C2C2C2;
+                height: inherit;
             }
         }
         .status{
@@ -163,6 +165,29 @@
         .to_right{
             img{
                 transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $laptop){
+    .claims_section{
+        padding: 34px 34px 34px 130px;
+        .claims_section_top{
+            margin-bottom: 36px;
+            h1{
+                font-size: 24px;
+            }
+        }
+        .claims_table{
+            thead{
+                height: 50px;
+            }
+            .standart_row{
+                height: 40px;
+            }
+            .status{
+                height: 28px;
             }
         }
     }

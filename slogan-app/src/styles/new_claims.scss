@@ -173,7 +173,37 @@
     }
 }
 
-
+@media screen and (max-width: $laptop){
+    .create_new_claim_section{
+        padding: 36px 36px 36px 132px;
+        h1{
+            font-size: 24px;
+        }
+        form:not([class]){
+            width: 50%;
+            input,select{
+                font-size: 16px;
+                &::placeholder{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: $tablet){
+    .create_new_claim_section{
+        padding: 36px;
+        form:not([class]){
+            width: 70%;
+        }
+    }
 
+}
+@media screen and (max-width: $tabletMini){
+    .create_new_claim_section{
+        padding: 24px 16px;
+        form:not([class]){
+            width: 100%;
+        }
+    }
 }
