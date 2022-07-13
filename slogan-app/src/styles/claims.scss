@@ -24,8 +24,7 @@
         .create_claim_button{
             padding-right: 16px;
             font-family: "Inter-Bold";
-            width: 174px;
-            height: 48px;
+            padding: 8px 16px 8px 44px;
             background-color: $slogan_main;
             border: none;
             border-radius: 16px;
@@ -188,6 +187,138 @@
             }
             .status{
                 height: 28px;
+            }
+        }
+    }
+}
+
+.claims_mobile_section{
+    padding: 34px 16px 16px 16px;
+    .claims_mobile_section_top{
+        margin-bottom: 30px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        h1{
+            font-family: "Inter-Bold";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 44px;
+            margin: 0;
+        }
+        .create_claim_button{
+            height: 48px;
+            width: 48px;
+            font-family: "Inter-Bold";
+            background-color: $slogan_main;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            color: #fff;
+            transition: all 0.1s ease;
+            cursor: pointer;
+            &:hover{
+                background-color: #5B9479;
+            }
+            &:active{
+                background-color: #4F896C;
+            }
+        }
+    }
+
+    .claim_mobile{
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        margin-bottom: 24px;
+        button{
+            text-align: center;
+            width: 84px;
+            height: 52px;
+            background-color: #fff;
+            border: 1px solid #ADADAD;
+            border-radius: 16px;   
+            font-family: 'Inter-Bold';
+            font-size: 18px; 
+            color: #858585;
+            &:hover{
+                color: #7DB59A;
+                border: 1px solid #7DB59A;
+            }
+            &:active{
+                color: #4F896C;
+                border: 1px solid #4F896C;
+            }
+        }
+        .claim_top{
+            height: 32px;
+            background-color: $slogan_main;
+        }
+        .claim_bottom{
+            padding: 24px 16px;
+            .claim_desc{
+                display: flex;
+                height: 24px;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 16px;
+                .mobile_bold{
+                    font-family: "Inter-Bold";
+                    font-size: 16px;
+                }
+                .mobile_thin{
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    height: inherit;
+                }
+                .type_circle{
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+                .hardware{
+                    background-color: $hardware;
+                }
+                .networking{
+                    background-color: $networking;
+                }
+                .software{
+                    background-color: $software;
+                }
+                .troubleshooting{
+                    background-color: $troubleshooting;
+                }
+                .status{
+                    font-family: "Inter-Bold";
+                    font-size: 8px;
+                    letter-spacing: 2.5px;
+                    text-transform: uppercase;
+                    width: 93px;
+                    height: 24px;
+                    border-radius: 16px;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .declined{
+                    background-color: $declined;
+                }
+                .new{
+                    background-color: $new;
+                }
+                .in_progress{
+                    background-color: $in_progress;
+                }
+                .done{
+                    background-color: $done;
+                }
             }
         }
     }
