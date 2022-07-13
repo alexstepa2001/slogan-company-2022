@@ -5,7 +5,6 @@
 }
 @import 'templates.scss';
 $footer_height: 96px;
-
 .enter_section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -126,7 +125,6 @@ $footer_height: 96px;
     background-color: $slogan_main;
     display: flex;
     align-items: center;
-
     padding: 0 30px;
     img{
         height: 60px;
@@ -191,6 +189,10 @@ $footer_height: 96px;
     }
 }
 @media screen and (max-width: $tablet){
+    body{
+        position: relative;
+        height: 100vh;
+    }
     .enter_section {
         grid-template-columns: unset;
         .img_enter{
