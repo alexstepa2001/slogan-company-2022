@@ -2,12 +2,13 @@ import {Link} from 'react-router-dom';
 import React, {useState } from 'react';
 
 const EnterSection = () => {
+    const [fullName, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        const log = {email, password};
-        fetch('http://localhost:3001/auth/login', {
+        const log = {fullName, email, password};
+        fetch('http://localhost:3001/auth/registration', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(log),
@@ -18,7 +19,7 @@ const EnterSection = () => {
                     window.location.replace("/");
                 }
                 else{
-                    alert('Ошибка входа, попробуйте ещё раз');
+                    alert('Ошибка регистрации, попробуйте ещё раз');
                 }
             }
         )
@@ -36,17 +37,15 @@ const EnterSection = () => {
                     <img src="img/logo-main.svg" alt="" />
                 </div>
                 <form onSubmit={handleSubmit}>
+                    <p>Full name</p>
+                    <input type="text" onChange={(e) => setName(e.target.value)} placeholder = "Type your name" value = {fullName} name="name" id="name" />
                     <p>E-mail</p>
                     <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder = "Type your e-mail" value = {email} name="email" id="email" />
                     <p>Password</p>
                     <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder = "Type your password" value = {password} name="password" id="password" />
-                    <div className="check_box">
-                        <input type="checkbox" className = "check_input" name="" id="check_box" />
-                        Keep me logged in
-                    </div>
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Register" />
                 </form>
-                <p>Not a member? <Link to="/registration">Request registration</Link></p>
+                <p><Link to="/login">Log In</Link></p>
             </div>
         </section>
     )

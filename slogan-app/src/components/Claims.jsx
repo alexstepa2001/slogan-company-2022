@@ -1,7 +1,8 @@
-import {ENTER, INDEX, NEW, INCOMING} from '../constants/routes.js';
+import {ENTER, INDEX, NEW, INCOMING, REG} from '../constants/routes.js';
 import Navigation from './Navigation'
 import Header from './Header';
 import Enter from './Enter';
+import Registration from './Registration';
 import ClaimsSection from './ClaimsSection';
 import NewClaimSection from './NewClaimSection';
 import IncomingClaimSection from './IncomingClaimSection';
@@ -9,14 +10,23 @@ import '../styles/style.scss';
 import '../styles/claims.scss';
 import {Routes, Route, useLocation} from 'react-router-dom';
 
+
 const App = () => {
-  const location = useLocation();
-  const isEnterLocation = location.pathname === '/enter';
-  if (isEnterLocation) {
+  if(sessionStorage.getItem('authorized') == null){
+    sessionStorage.setItem('authorized', 0);
+  }
+  const location = useLocation(); 
+  const isEnterLocation = location.pathname === '/login';
+  const isRegistrationLocation = location.pathname === '/registration';
+  if((sessionStorage.getItem('authorized') == 0) && !(isEnterLocation || isRegistrationLocation)){
+    window.location.replace("/login");
+  }
+  if (isEnterLocation || isRegistrationLocation) {
     return (
       <div className="App">
         <Routes>
           <Route path = {ENTER} element={<Enter/>} />
+          <Route path = {REG} element = {<Registration/>}/>
         </Routes>
       </div>
     );
