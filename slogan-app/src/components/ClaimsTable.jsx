@@ -1,5 +1,20 @@
 import {Link} from 'react-router-dom';
+import React, {useState } from 'react';
+import { useEffect } from 'react';
 const ClaimsTable = () => {
+    const [claimCounter, setCounter] = useState('');
+    useEffect(() => {
+        console.log('Bearer ' + sessionStorage.getItem('token'));
+        fetch('/claim', {
+            headers : {'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
+        })
+        .then(response => response.json())
+        .then(function (data){
+            setCounter(data.totalItems);
+            console.log(claimCounter);
+            console.log(data);
+        })
+    }, [])
     return (
         <table className="claims_table">
             <thead>

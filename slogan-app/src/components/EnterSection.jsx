@@ -15,7 +15,11 @@ const EnterSection = () => {
             function(response){
                 if (response.ok){
                     sessionStorage.setItem('authorized', 1);
-                    window.location.replace("/");
+                    response.json().then(function (data) {
+                        sessionStorage.setItem('name', data.fullName);
+                        sessionStorage.setItem('token', data.token);
+                        window.location.replace("/");
+                    })
                 }
                 else{
                     alert('Ошибка входа, попробуйте ещё раз');
