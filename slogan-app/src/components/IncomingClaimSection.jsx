@@ -1,7 +1,7 @@
 import '../styles/new_claims.scss';
 import {Link} from 'react-router-dom';
 
-const IncomingClaimSection = () => {
+const IncomingClaimSection = (props) => {
     return  (
         <section className="create_new_claim_section incoming">
             <h1>Incoming claim</h1>
