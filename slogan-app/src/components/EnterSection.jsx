@@ -16,6 +16,13 @@ const EnterSection = () => {
                 if (response.ok){
                     sessionStorage.setItem('authorized', 1);
                     response.json().then(function (data) {
+                        console.log(data.role.slug);
+                        if(data.role.slug === "admin"){
+                            sessionStorage.setItem('isAdmin', true);
+                        }
+                        else{
+                            sessionStorage.setItem('isAdmin', false);
+                        }
                         sessionStorage.setItem('name', data.fullName);
                         sessionStorage.setItem('token', data.token);
                         window.location.replace("/");

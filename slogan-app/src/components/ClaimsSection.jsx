@@ -5,10 +5,11 @@ import TableMenu from './TableMenu';
 
 const ClaimsSection = () => {
     const resizeWin = window.matchMedia('(min-width: 950px)');
+    console.log(localStorage.getItem('search'));
     let [claimCounter, setCounter] = useState('');
     let [claims, setClaims] = useState('');
     useEffect(() => {
-        fetch(`/claim?offset=${localStorage.getItem('pageset')}&limit=10`, {
+        fetch(`/claim?offset=${localStorage.getItem('pageset')}&limit=10&search=${localStorage.getItem('search')}&sort=asc`, {
             headers : {'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
         })
         .then(response => response.json())

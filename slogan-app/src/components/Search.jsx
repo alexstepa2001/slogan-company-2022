@@ -1,7 +1,7 @@
 const Search = () => {
     return (
-        <form action="" className = "search_form">
-            <input className = "search" type="search" name="search" id="search" placeholder='Search'/>
+        <form className = "search_form">
+            <input className = "search" onChange = {(e) => localStorage.setItem('search', e.target.value)} type="text" name="search" id="search" placeholder='Search'/>
         </form>
         )
 }

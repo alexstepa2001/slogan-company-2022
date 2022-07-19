@@ -2,6 +2,9 @@ import '../styles/new_claims.scss';
 import {Link} from 'react-router-dom';
 
 const IncomingClaimSection = (props) => {
+    function handleDoneSubmit() {
+        
+    }
     return  (
         <section className="create_new_claim_section incoming">
             <h1>Incoming claim</h1>
@@ -25,11 +28,12 @@ const IncomingClaimSection = (props) => {
                             Cancel
                         </button>       
                     </Link>
-                    <form action="" className = "incoming_form">
+                    <form action="" onSubmit = {handleDoneSubmit} className = "incoming_form">
                         <input type="submit" value="Done" className = "create_but"/>
+                    </form>
+                    <form action="" className = "incoming_form">
                         <input type="submit" value="Decline" className = "create_but"/>
                     </form>
-                    
                 </div>
         </section>
         )
