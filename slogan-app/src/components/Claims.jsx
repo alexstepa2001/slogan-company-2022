@@ -12,6 +12,7 @@ import {Routes, Route, useLocation} from 'react-router-dom';
 
 
 const App = () => {
+  localStorage.setItem('pageset', 0);
   if(sessionStorage.getItem('authorized') == null){
     sessionStorage.setItem('authorized', 0);
   }

@@ -103,7 +103,7 @@
         .new{
             background-color: $new;
         }
-        .in_progress{
+        .progress{
             background-color: $in_progress;
         }
         .done{
@@ -228,13 +228,26 @@
             }
         }
     }
-
+    .table_menu{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: $slogan_main;
+        border-radius: 10px;
+        height: 50px;
+        color: #fff;
+        padding: 10px;
+        .to_right{
+            transform: rotate(180deg);
+        }
+    }
     .claim_mobile{
         width: 100%;
         border-radius: 16px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
         overflow: hidden;
         margin-bottom: 24px;
+
         button{
             text-align: center;
             width: 84px;
@@ -257,6 +270,14 @@
         .claim_top{
             height: 32px;
             background-color: $slogan_main;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: "Inter-Bold";
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 700;
+            color: #fff;
         }
         .claim_bottom{
             padding: 24px 16px;
@@ -313,7 +334,7 @@
                 .new{
                     background-color: $new;
                 }
-                .in_progress{
+                .progress{
                     background-color: $in_progress;
                 }
                 .done{

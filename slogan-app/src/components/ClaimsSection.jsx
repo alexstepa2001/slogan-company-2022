@@ -1,9 +1,23 @@
 import ClaimsTable from './ClaimsTable';
-import TableMenu from './TableMenu';
 import {Link} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import TableMenu from './TableMenu';
 
 const ClaimsSection = () => {
     const resizeWin = window.matchMedia('(min-width: 950px)');
+    let [claimCounter, setCounter] = useState('');
+    let [claims, setClaims] = useState('');
+    useEffect(() => {
+        fetch(`/claim?offset=${localStorage.getItem('pageset')}&limit=10`, {
+            headers : {'Authorization': 'Bearer ' + sessionStorage.getItem('token')}
+        })
+        .then(response => response.json())
+        .then(function (data){
+            setCounter(data.totalItems); 
+            setClaims(data.claims); 
+        })
+    }, [claims, claimCounter])
+    if (claims !== '')
     if (resizeWin.matches){
         return (
             <>
@@ -17,8 +31,7 @@ const ClaimsSection = () => {
                             </button>
                         </Link>
                 </div>
-                <ClaimsTable/>
-                <TableMenu/>
+                <ClaimsTable claimsCounter = {claimCounter} claims = {claims}/>
             </section> 
             </>
         )
@@ -35,9 +48,10 @@ const ClaimsSection = () => {
                             </button>
                         </Link>
                     </div>
-                    <div className="claim_mobile">
+                    {claims.map((claim) => 
+                        <div className="claim_mobile">
                         <div className="claim_top">
-
+                            {claim.title}
                         </div>
                         <div className="claim_bottom">
                             <div className="claim_desc">
@@ -45,7 +59,7 @@ const ClaimsSection = () => {
                                     Created
                                 </div>
                                 <div className="mobile_thin">
-                                    12/04/2021
+                                    {claim.createdAt[8]}{claim.createdAt[9]}/{claim.createdAt[5]}{claim.createdAt[6]}/{claim.createdAt[0]}{claim.createdAt[1]}{claim.createdAt[2]}{claim.createdAt[3]}
                                 </div>
                             </div>
                             <div className="claim_desc">
@@ -53,8 +67,8 @@ const ClaimsSection = () => {
                                     Type
                                 </div>
                                 <div className="mobile_thin">
-                                    <div className="type_circle hardware"></div>
-                                    Hardware
+                                    <div className={claim.type.name.toLowerCase() + " type_circle"}></div>
+                                        {claim.type.name}
                                 </div>
                             </div>
                             <div className="claim_desc">
@@ -62,8 +76,8 @@ const ClaimsSection = () => {
                                     Status
                                 </div>
                                 <div className="mobile_thin">
-                                    <div className="status declined">
-                                        Declined
+                                    <div className={claim.status.name.toLowerCase() +" status"}>
+                                        {claim.status.name}
                                     </div>
                                 </div>
                             </div>
@@ -74,86 +88,8 @@ const ClaimsSection = () => {
                             </Link>
                         </div>
                     </div>
-
-                    <div className="claim_mobile">
-                        <div className="claim_top">
-
-                        </div>
-                        <div className="claim_bottom">
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Created
-                                </div>
-                                <div className="mobile_thin">
-                                    12/04/2021
-                                </div>
-                            </div>
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Type
-                                </div>
-                                <div className="mobile_thin">
-                                    <div className="type_circle software"></div>
-                                    Software
-                                </div>
-                            </div>
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Status
-                                </div>
-                                <div className="mobile_thin">
-                                    <div className="status new">
-                                        New
-                                    </div>
-                                </div>
-                            </div>
-                            <Link to="/">
-                                <button>
-                                    Browse
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="claim_mobile">
-                        <div className="claim_top">
-
-                        </div>
-                        <div className="claim_bottom">
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Created
-                                </div>
-                                <div className="mobile_thin">
-                                    14/04/2021
-                                </div>
-                            </div>
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Type
-                                </div>
-                                <div className="mobile_thin">
-                                    <div className="type_circle troubleshooting"></div>
-                                    Troubleshooting
-                                </div>
-                            </div>
-                            <div className="claim_desc">
-                                <div className="mobile_bold">
-                                    Status
-                                </div>
-                                <div className="mobile_thin">
-                                    <div className="status in_progress">
-                                        in progress
-                                    </div>
-                                </div>
-                            </div>
-                            <Link to="/">
-                                <button>
-                                    Browse
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
+                    )}
+                    <TableMenu claim = {claimCounter}/>
                 </section>
             </>
         )
