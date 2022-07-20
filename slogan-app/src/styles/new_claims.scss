@@ -172,6 +172,29 @@
             }
         }
     }
+    .incoming_form_two{
+        display: flex;
+        input{
+            border: none;
+            background-color: #E84393;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 36px;
+            font-family: "Inter-Bold";
+            width: 82px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            border-radius: 16px;
+            &:hover{
+                background-color: #B03671;
+            }
+            &:active{
+                background-color: #832552;
+            }
+        }
+    }
 }
 
 .incoming{

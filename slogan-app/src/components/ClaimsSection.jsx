@@ -5,7 +5,6 @@ import TableMenu from './TableMenu';
 
 const ClaimsSection = () => {
     const resizeWin = window.matchMedia('(min-width: 950px)');
-    console.log(localStorage.getItem('search'));
     let [claimCounter, setCounter] = useState('');
     let [claims, setClaims] = useState('');
     useEffect(() => {
@@ -82,7 +81,7 @@ const ClaimsSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <Link to="/">
+                            <Link  to={"/incoming_claim"} state = {{id: claim.id, title: claim.title, type: claim.type.slug, description: claim.description}}>
                                 <button>
                                     Browse
                                 </button>

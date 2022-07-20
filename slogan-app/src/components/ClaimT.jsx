@@ -15,7 +15,7 @@ export default function ClaimT(props) {
                     {props.status.name}
                 </div>
             </td>
-            <td><Link to="/incoming_claim">Browse</Link></td> 
+            <td><Link  to={"/incoming_claim"} state = {{id: props.id, title: props.title, type: props.type.slug, description: props.description}}>Browse</Link></td> 
         </tr>
     )
 }
