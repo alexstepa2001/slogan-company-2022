@@ -11,7 +11,7 @@ import '../styles/claims.scss';
 import {Routes, Route, useLocation} from 'react-router-dom';
 
 
-const App = () => {
+const Claims = () => {
   localStorage.setItem('search','');
   localStorage.setItem('pageset', 0);
   if(sessionStorage.getItem('authorized') == null){
@@ -47,4 +47,4 @@ const App = () => {
     );
   }
 }
-export default App;
+export default Claims;

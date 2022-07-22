@@ -22,7 +22,9 @@ const TableMenu = (props) => {
             <button className="to_left" onClick = {toLeft}>
                 <img src="img/left.svg" alt="" />
             </button>
-            {pages.map((pages) =>  <Page page = {pages} updateClaims = {props.updateClaims}/>)}
+            <div className="pages_map">
+                {pages.map((pages) =>  <Page page = {pages} updateClaims = {props.updateClaims}/>)}
+            </div>
             <button className="to_right" onClick = {toRight}>
                 <img src="img/left.svg" alt="" />
             </button>

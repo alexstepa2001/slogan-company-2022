@@ -8,7 +8,9 @@ export default function Page(props) {
     }
     return (
         <button onClick = {pageSet} className="page_list">
-            {props.page}
+            <div className="page">
+                {props.page}
+            </div>
         </button>
     )
 }

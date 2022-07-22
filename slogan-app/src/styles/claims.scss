@@ -168,7 +168,18 @@
         }
     }
 }
-
+.pages_map{
+    display: flex;
+    width: 250px;
+    overflow-x: auto;
+    .page{
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 @media screen and (max-width: $laptop){
     .claims_section{
         padding: 34px 34px 34px 130px;
@@ -229,7 +240,8 @@
         }
     }
     .table_menu{
-        width: 200px;
+        margin: 0 auto;
+        width: 250px;
         overflow: hidden;
         display: flex;
         justify-content: space-between;
