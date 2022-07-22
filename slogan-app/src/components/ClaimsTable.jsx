@@ -27,7 +27,7 @@ const ClaimsTable = (props) => {
                     </thead>
                     {props.claims.map((claim) => <ClaimT id = {claim._id} title = {claim.title} type = {claim.type} status = {claim.status} time = {claim.createdAt} description = {claim.description}/>)}
                 </table>
-                <TableMenu claim = {props.claimsCounter}/>
+                <TableMenu claim = {props.claimsCounter} updateClaims = {props.updateClaims}/>
             </>
         )
     }

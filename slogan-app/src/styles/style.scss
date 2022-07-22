@@ -189,6 +189,38 @@ select::-ms-expand {
     display: none;
 }
 
+.search{
+    position: absolute;
+    top: 24px;
+    right: 326px;
+    width: 300px;
+    height: 48px;
+    background-color: rgba(194, 194, 194, 0.24);;
+    border-radius: 16px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    padding-left: 28px;
+    background-image: url(../../public/img/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: top 4px right 4px;
+    background-size: 40px;
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: #ADADAD;
+    }
+}
+
+@media screen and (max-width: $laptop){
+    .search{
+        font-size: 16px;
+    }
+}
 @media screen and (max-width: $tablet){
     a{
         text-decoration: none;
@@ -239,6 +271,9 @@ select::-ms-expand {
     }
     .App{
         grid-template-rows: 64px 1fr;
+    }
+    .search{
+        display: none;
     }
     .header{
         border-bottom: none;

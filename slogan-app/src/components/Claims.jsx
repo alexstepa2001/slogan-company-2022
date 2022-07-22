@@ -39,7 +39,7 @@ const App = () => {
       <Navigation />
       <Header />
       <Routes>
-        <Route path={INDEX} element={<ClaimsSection />} />
+        <Route path={INDEX} element={<ClaimsSection/>} />
         <Route path={NEW} element={<NewClaimSection />} />
         <Route path={INCOMING} element={<IncomingClaimSection />} />
       </Routes>

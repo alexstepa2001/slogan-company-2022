@@ -9,7 +9,6 @@ const Header = () => {
     <>
         <header className="header">
             <Burger/> 
-            <Search/>
             <Notifications/>
             <HeaderAccount/>
         </header>
